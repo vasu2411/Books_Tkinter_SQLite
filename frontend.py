@@ -1,4 +1,5 @@
 from tkinter import *
+import backend
 
 #main window
 window = Tk()
@@ -51,7 +52,7 @@ sc1.configure(command=li1.yview)
 b1 = Button(window,text="View All",width=13)
 b1.grid(row=2,column=3)
 
-#View all button
+#search entry button
 b2 = Button(window,text="Search entry",width=13)
 b2.grid(row=3,column=3)
 
