@@ -20,8 +20,10 @@ def search(title="", author="", year="", isbn=""):
     cur = conn.cursor()
     cur.execute(
         "SELECT * FROM books WHERE title=? OR author=? OR year=? OR isbn=?",(title,author,year,isbn,))
+    rows = cur.fetchall()
     conn.commit()
     conn.close()
+    return rows
 
 def view():
     conn = sqlite3.connect("books.db")
@@ -33,7 +35,7 @@ def view():
     conn.close()
     return rows
 
-def update(id,title,author,price,isbn):
+def update(id,title,author,year,isbn):
     conn = sqlite3.connect("books.db")
     cur = conn.cursor()
     cur.execute(
