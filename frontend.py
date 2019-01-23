@@ -4,6 +4,9 @@ import backend
 #main window
 window = Tk()
 
+#connection to the database
+backend.connect()
+
 #clear all text boxes
 def clearAllTextBox():
     t1.delete(0, END)
